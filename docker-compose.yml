@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+    app-nginx:
+        build:
+            context: docker
+            dockerfile: development/nginx/Dockerfile
+        ports:
+            - "80:80"
+        volumes:
+            - ./:/var/www
+        depends_on:
+            - app-php-fpm
+
+    app-php-fpm:
+        build:
+            context: docker
+            dockerfile: development/php-fpm/Dockerfile
+        environment:
+            APP_ENV: dev
+            APP_DEBUG: 1
+        volumes:
+            - ./:/var/www
+
+    app-php-cli:
+        tty: true
+        build:
+            context: docker
+            dockerfile: development/php-cli/Dockerfile
+        environment:
+            APP_ENV: dev
+            APP_DEBUG: 1
+        volumes:
+            - ./:/var/www
+
+    app-nodejs:
+        tty: true
+        image: node:14-alpine
+        volumes:
+            - ./:/var/www
+        working_dir: /var/www
