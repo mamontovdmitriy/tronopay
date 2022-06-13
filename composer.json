@@ -12,6 +12,7 @@
         "symfony/flex": "^2",
         "symfony/form": "6.1.*",
         "symfony/framework-bundle": "*",
+        "symfony/mailer": "6.1.*",
         "symfony/monolog-bundle": "^3.0",
         "symfony/runtime": "*",
         "symfony/translation": "6.1.*",

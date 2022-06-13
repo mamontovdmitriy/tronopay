@@ -38,3 +38,9 @@ services:
         volumes:
             - ./:/var/www
         working_dir: /var/www
+
+    ###> symfony/mailer ###
+    mailer:
+        image: schickling/mailcatcher
+        ports: [1025, 1080]
+    ###< symfony/mailer ###
