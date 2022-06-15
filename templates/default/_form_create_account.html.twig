@@ -1,0 +1,38 @@
+{% form_theme form with ['_forms.html.twig'] %}
+
+
+{{ form_start(form, {
+    'attr': {'class': 'bg-light border rounded shadow'}
+}) }}
+
+<h3 class="text-center m-3">{{ 'form_header'|trans }}</h3>
+
+<div class="m-3">
+{#    {{ form_label(form.email, '', {'label_attr': {'class': 'form-label'}}) }} #}
+    {{ form_widget(form.email, {
+        'attr': {'class': 'form-control form-control-lg'}
+    }) }}
+    {{ form_errors(form.email) }}
+    {{ form_help(form.email, {
+        'help_attr': {'class': 'form-text'}
+    }) }}
+</div>
+<div class="m-3">
+{#    {{ form_label(form.captcha, '', {'label_attr': {'class': 'form-label'}}) }} #}
+    <div class="input-group input-group-lg">
+        {{ form_widget(form.captcha, {
+            'attr': {'class': 'form-control form-control-lg'}
+        }) }}
+    </div>
+    {{ form_errors(form.captcha) }}
+    {{ form_help(form.captcha, {
+        'help_attr': {'class': 'form-text'}
+    }) }}
+</div>
+
+<div class="d-grid gap-2 col-8 mx-auto m-3">
+    <button type="submit" class="btn btn-primary btn-lg">{{ 'button_get_address'|trans }}</button>
+</div>
+
+{{ form_end(form) }}
+

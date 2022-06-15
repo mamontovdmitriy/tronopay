@@ -1,0 +1,18 @@
+# languages
+language: Язык
+
+
+
+
+# common
+subtitle: Быстрые платежи для микро бизнеса
+
+# form
+form_header: Быстрый старт
+button_get_address: Получить адрес
+captcha: 5 символов
+email: Email
+email_help: Мы никому не передаём ваш email.
+
+mgs_check_email: |
+  Проверьте ваш email! Мы отправили вам новый адрес и всю информацию о вашем аккаунте.

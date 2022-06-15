@@ -1,0 +1,14 @@
+{% set _route = app.request.attributes.get('_route') %}
+{% set _params = app.request.attributes.get('_route_params') %}
+
+<ul class="languages">
+    {% set _locales = locales|split('|') %}
+    {% for _loc in _locales %}
+        {% set _active = (_params['_locale'] is defined and _params['_locale'] == _loc) %}
+        {% set _params_lang = _params|merge({'_locale': _loc}) %}
+        {% set _href = url(_route, _params_lang) %}
+        <li class="language-item">
+            <a class="text-dark text-decoration-none language-link {{ _active ? 'active' : '' }}" href="{{ _href }}">{{ _loc|trans }}</a>
+        </li>
+    {% endfor %}
+</ul>

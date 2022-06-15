@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{%- block title -%}
+    T-pay - the fastest and simplest payments for your business
+{%- endblock -%}
+
+{%- block meta -%}
+    <meta name="description"
+          content="The fastest and simplest payments for your business. No verification, no KYC, no AML">
+{%- endblock -%}
+
+{% block content %}
+    <div class="m-3">
+{#        <div class="row g-2">#}
+{#            <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-7 col-xxl-8">#}
+{#                <h1>T-pay</h1>#}
+{#                123#}
+{#            </div>#}
+{#            <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-4">#}
+{#                {% include 'default/_form_create_account.html.twig' with {'form': form} %}#}
+{#            </div>#}
+{#        </div>#}
+
+        <div class="row g-2">
+            <div class="col-12 col-sm-12 offset-md-3 col-md-6 offset-lg-3 col-lg-6 offset-xl-4 col-xl-4 col-xxl-4">
+                {% include 'default/_form_create_account.html.twig' with {'form': form} %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

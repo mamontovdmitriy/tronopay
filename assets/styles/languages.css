@@ -1,0 +1,17 @@
+.languages {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.language-item {
+    padding: 4px 8px;
+    border-left: 1px solid #EEEEEE;
+}
+
+.language-item:first-child {
+    border-left: 0 none transparent;
+}
+

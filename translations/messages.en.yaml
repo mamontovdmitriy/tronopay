@@ -1,0 +1,18 @@
+# languages
+language: Language
+cn: 中文
+en: English
+ru: Русский
+
+# common
+subtitle: The fastest payments for a micro business
+
+# form
+form_header: Sign in here
+button_get_address: Get a new address
+captcha: Captcha
+email: Email
+email_help: We'll never share your email with anyone else.
+
+mgs_check_email: |
+  Check your email, please. We sent you a new address and all information about your wallet.

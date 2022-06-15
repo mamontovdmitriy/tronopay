@@ -1,4 +1,7 @@
 {
+    "gregwar/captcha-bundle": {
+        "version": "v2.2.0"
+    },
     "symfony/console": {
         "version": "6.1",
         "recipe": {

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{%- block title -%}
+    Pay, please
+{%- endblock -%}
+
+{%- block meta -%}
+    <meta name="description"
+          content="The fastest and simplest payments for your business. No verification. No KYC. No AML">
+{%- endblock -%}
+
+{% block content %}
+    <div class="text-center">
+        <img src="{{ address|qr }}" alt="QR-code of address"/>
+
+        <span>{{ address }}</span>
+    </div>
+
+
+
+{% endblock %}
