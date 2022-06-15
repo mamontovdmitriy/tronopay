@@ -16,3 +16,6 @@ email_help: We'll never share your email with anyone else.
 
 mgs_check_email: |
   Check your email, please. We sent you a new address and all information about your wallet.
+
+# payment
+available_balance: Available balance

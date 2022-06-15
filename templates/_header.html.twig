@@ -1,15 +1,14 @@
-<header class="text-center pb-3 mb-4">
+<header class="text-center pt-3 pb-1 mb-1">
     <div class="position-absolute top-0 end-0">
         {{ include('_language.html.twig') }}
     </div>
-    <a href="/" class="text-dark text-decoration-none">
-        <div class="fs-4 text-center">
-            <div>
-                {{ app_name }}
-            </div>
-            <small class="text-muted">
-                {{ 'subtitle'|trans }}
-            </small>
+
+    <a href="/" class="text-center text-dark text-decoration-none">
+        <div class="fs-3">
+            {{ app_name }}
+        </div>
+        <div class="fs-6 text-muted">
+            {{ 'subtitle'|trans }}
         </div>
     </a>
 </header>

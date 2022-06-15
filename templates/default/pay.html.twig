@@ -11,11 +11,100 @@
 
 {% block content %}
     <div class="text-center">
-        <img src="{{ address|qr }}" alt="QR-code of address"/>
+        <img class="img-fluid"
+             src="{{ address|qr }}"
+             alt="QR-code of address"/>
 
-        <span>{{ address }}</span>
+        <h6>{{ address }}</h6>
+
+        <div id="block_balance" class="text-center">
+            <div class="m-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script>
 
+        updateBalance();
 
+        function updateBalance() {
+            const url = 'https://api.trongrid.io/v1/accounts/{{ address }}?only_confirmed=false';
+
+            fetch(url)
+                .then(async function (response) {
+                    const json = await response.json();
+                    const [data] = json['data'] || [];
+                    const list = getBalanceList(data);
+
+                    showBlock(makeBalance(list));
+                })
+                .catch(function (e) {
+                    showBlock(makeNotice(e));
+                });
+        }
+
+        function showBlock(html) {
+            const blockBalance = document.getElementById('block_balance');
+            blockBalance.innerHTML = html;
+        }
+
+        function getBalanceList(data) {
+            if (data == null) {
+                return {'TRX': 0};
+            }
+            let list = {'TRX': data['balance']};
+            (data['trc20'] || []).forEach(function (item) {
+                list = {...list, ...item};
+            })
+            return list;
+        }
+
+        function getTokenName(token) {
+            const names = {
+                'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t': 'USDT (TRC20)'
+            };
+            return names[token] != null ? names[token] : token;
+        }
+
+        function getTokenBalance(token, balance) {
+            const rates = {
+                'TRX': 0.000001,
+                'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t': 0.000001 // USDT (TRC20)
+            }
+            return (rates[token] != null ? rates[token] : 1) * balance;
+        }
+
+        function makeBalance(list) {
+            // let items = '';
+            // Object.keys(list).forEach(function (key) {
+            //     let name = getTokenName(key);
+            //     let balance = getTokenBalance(key, list[key]);
+            //     items += `<dt class="col-sm-6 text-start text-truncate">${name}</dt>`
+            //             +`<dd class="col-sm-6 text-end">${balance}</dd>\r\n`;
+            // });
+            // return '<dl class="row" style="width: 330px; margin: auto">' + items + '</dl>';
+
+            let trs = '';
+            Object.keys(list).forEach(function (token) {
+                let name = getTokenName(token);
+                let balance = getTokenBalance(token, list[token]);
+                trs += `<tr><td class="text-start text-truncate">${name}</td>`
+                        + `<td class="text-end">${balance}</td></tr>\r\n`;
+            });
+            return '<table class="table table-hover" style="width: 330px; margin: auto">'
+                + '<thead><tr><th colspan="2">{{ 'available_balance'|trans }}</th></tr></thead>'
+                + '<tbody>' + trs + '</tbody></table>';
+        }
+
+        function makeError() {
+            return '<div class="alert alert-danger"> Oops! Something wrong... </div>';
+        }
+
+        function makeNotice() {
+            return '<div class="alert alert-info"> Empty wallet... </div>';
+        }
+    </script>
 {% endblock %}
