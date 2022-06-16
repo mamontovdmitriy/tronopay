@@ -9,6 +9,7 @@
         "ext-iconv": "*",
         "endroid/qr-code": "^4.4",
         "gregwar/captcha-bundle": "^2.2",
+        "iexbase/tron-api": "^4.0",
         "symfony/console": "*",
         "symfony/dotenv": "*",
         "symfony/flex": "^2",

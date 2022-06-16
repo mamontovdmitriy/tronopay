@@ -10,6 +10,7 @@ parameters:
     # application options
     app_name: '%env(APP_NAME)%'
     app_logo_tron: '%kernel.project_dir%/assets/tron.png'
+    app_tron_node: '%env(APP_TRON_NODE)%'
 
 services:
     # default configuration for services in *this* file
@@ -19,6 +20,7 @@ services:
 
         bind:
             string $pathProject: '%kernel.project_dir%'
+            string $urlTronNode: '%app_tron_node%'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
