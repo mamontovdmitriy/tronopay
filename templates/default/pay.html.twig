@@ -12,7 +12,8 @@
 {% block content %}
     <div class="text-center">
         <img class="img-fluid"
-             src="{{ address|qr }}"
+             src="{{ render_esi(path('qrcode', {'address': address})) }}"
+{#             src="{{ address|qr }}"#}
              alt="QR-code of address"/>
 
         <h6>{{ address }}</h6>

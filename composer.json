@@ -10,6 +10,7 @@
         "endroid/qr-code": "^4.4",
         "gregwar/captcha-bundle": "^2.2",
         "iexbase/tron-api": "^4.0",
+        "symfony/cache": "6.1.*",
         "symfony/console": "*",
         "symfony/dotenv": "*",
         "symfony/flex": "^2",
