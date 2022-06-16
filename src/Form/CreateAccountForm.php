@@ -26,9 +26,12 @@ class CreateAccountForm extends AbstractType
                 ],
             ])
             ->add('captcha', CaptchaType::class, [
-                'length'   => 5,
-                'required' => true,
-                'attr'     => [
+                'background_color' => [255, 255, 255],
+                'text_color'       => [0, 0, 255],
+                'quality'          => 80,
+                'length'           => 5,
+                'required'         => true,
+                'attr'             => [
                     'placeholder' => 'captcha',
                 ],
             ]);
