@@ -21,6 +21,7 @@ mgs_check_email: Check your email, please.
 available_balance: Available balance
 
 # email template
+email_subject: "[%app_name%] Account information - %date%"
 email_header: Congratulations!
 email_public_body: |
   A new Tron-wallet address has been created for you.

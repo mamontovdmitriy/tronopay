@@ -23,6 +23,7 @@ services:
             string $pathProject: '%kernel.project_dir%'
             string $urlTronNode: '%app_tron_node%'
             string $emailFrom: '%app_email_from%'
+            string $appName: '%app_name%'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name

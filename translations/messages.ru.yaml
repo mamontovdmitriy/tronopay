@@ -24,6 +24,7 @@ mgs_check_email: Проверьте указанный email!
 available_balance: Доступный баланс
 
 # email template
+email_subject: "[%app_name%] Информация об аккаунте - %date%"
 email_header: Поздравляем!
 email_public_body: |
   Для вас создан новый адрес Tron-кошелька.

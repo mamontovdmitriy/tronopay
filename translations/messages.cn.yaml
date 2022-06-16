@@ -24,6 +24,7 @@ mgs_check_email: 请查看你的邮箱。
 available_balance: 可用余额
 
 # email template
+email_subject: "[%app_name%] 帐户信息 - %date%"
 email_header: 恭喜！
 email_public_body: |
   已为您创建了一个新的 Tron 钱包地址。
