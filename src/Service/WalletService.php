@@ -19,4 +19,9 @@ class WalletService
     {
         return $this->tron->generateAddress();
     }
+
+    public function validate(string $address): bool
+    {
+        return $this->tron->isAddress($address);
+    }
 }

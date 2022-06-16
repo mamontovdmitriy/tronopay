@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\CreateAccountForm;
 use App\Service\AccountService;
+use App\Service\WalletService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,12 +38,11 @@ class SiteController extends AbstractController
     }
 
     #[Route(path: '/pay/{address}', name: 'pay')]
-    public function pay(string $address): Response
+    public function pay(string $address, WalletService $walletService): Response
     {
-        // todo check address
-//        if (false) {
-//            return $this->createNotFoundException();
-//        }
+        if (!$walletService->validate($address)) {
+            throw $this->createNotFoundException();
+        }
 
         return $this->render('default/pay.html.twig', ['address' => $address]);
     }
