@@ -6,6 +6,7 @@ ru: Русский
 
 # common
 subtitle: The fastest payments for a micro business
+copyright: All rights reserved.
 
 # form
 form_header: Sign in here
@@ -14,8 +15,24 @@ captcha: Captcha
 email: Email
 email_help: We'll never share your email with anyone else.
 
-mgs_check_email: |
-  Check your email, please. We sent you a new address and all information about your wallet.
+mgs_check_email: Check your email, please.
 
 # payment
 available_balance: Available balance
+
+# email template
+email_header: Congratulations!
+email_public_body: |
+  A new Tron-wallet address has been created for you.
+  Now you can use it to receive any payments.
+email_wallet_address: Address
+email_payment_link: Link to the payment page
+
+email_confidential: Confidential
+email_private_key: Private key
+email_private_warning: Do not share the secret key with anyone else.
+email_instruction: Instructions for using the secret key will be here.
+
+email_receive_warning: You received this email because you signed up for %app_name%.
+email_confidential_warning: The content of the private part of this email is confidential and intended for the recipient specified in message only. It is strictly forbidden to share the private part of this message with any third party.
+email_mistake_warning: If you received this message by mistake, please reply to this message and follow with its deletion, so that we can ensure such a mistake does not occur in the future.

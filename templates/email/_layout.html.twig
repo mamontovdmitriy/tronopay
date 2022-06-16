@@ -1,0 +1,49 @@
+{% apply inline_css(source('@assets/styles/email-common.css'), source('@assets/styles/email.css')) %}
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body class="email-body">
+
+    <table class="email-container">
+        <tbody>
+        <tr>
+            <td class="email-header">{% block public_header %}{% endblock %}</td>
+        </tr>
+        <tr>
+            <td class="email-public">{% block public_body %}{% endblock %}</td>
+        </tr>
+        <tr>
+            <td class="email-detail">{% block private_header %}{% endblock %}</td>
+        </tr>
+        <tr>
+            <td class="email-private">{% block private_body %}{% endblock %}</td>
+        </tr>
+{#        <tr>#}
+{#            <td class="email-detail">{% block detail %}{% endblock %}</td>#}
+{#        </tr>#}
+        <tr>
+            <td class="email-footer">
+                <table>
+                    <tr>
+                        <td class="text-center">
+                            {{ 'email_receive_warning'|trans({'%app_name%': app_name}) }}<br/>
+                            {{ 'email_mistake_warning'|trans }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            &copy; {{ 'now'|date('Y') }} {{ app_legal_name }}, {{ app_legal_address }}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </body>
+    </html>
+{% endapply %}

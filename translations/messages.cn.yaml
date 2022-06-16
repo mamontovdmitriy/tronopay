@@ -4,3 +4,35 @@ language: 語言
 
 
 
+# common
+subtitle: 支付微型企业的最快方式
+copyright: 版权所有。
+
+# form
+form_header: 在此登录
+button_get_address: 获取新地址
+captcha: Captcha
+email: Email
+email_help: 我们绝不会与其他任何人分享您的电子邮件
+
+mgs_check_email: 请查看你的邮箱。
+
+# payment
+available_balance: 可用余额
+
+# email template
+email_header: 恭喜！
+email_public_body: |
+  已为您创建了一个新的 Tron 钱包地址。
+  现在您可以使用它来接收任何付款。
+email_wallet_address: 地址
+email_payment_link: 链接到付款页面
+
+email_confidential: 机密的
+email_private_key: 私钥
+email_private_warning: 不要与其他任何人共享私钥。
+email_instruction: 使用私钥的说明将在此处。
+
+email_receive_warning: 您收到这封电子邮件是因为您注册了 %app_name%。
+email_confidential_warning: 此电子邮件的私人部分的内容是机密的，仅供邮件中指定的收件人使用。 严禁与任何第三方共享此消息的私密部分。
+email_mistake_warning: 如果您误收到此消息，请回复此消息并删除，以便我们确保以后不再发生此类错误。

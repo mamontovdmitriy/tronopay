@@ -1,4 +1,5 @@
 <footer class="pt-4 my-4 text-muted text-center">
     {% set year = 'now'|date('Y') %}
-    © {{ app_name }}, 2022{{- (year > '2022') ? '-' ~ year : '' }}
+    © {{ app_legal_name }}, 2022{{- (year > '2022') ? '-' ~ year : '' }}.
+    {{ 'copyright'|trans }}
 </footer>

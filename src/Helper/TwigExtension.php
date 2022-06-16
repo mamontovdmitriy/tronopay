@@ -37,7 +37,7 @@ class TwigExtension extends AbstractExtension
         return str_replace([',', '.'], $delimiter, $format);
     }
 
-    public function urlQR(string $url, int $size = 300): string
+    public function urlQR(string $url, bool $isShowLogo = true, int $size = 300): string
     {
         $qrCode = QrCode::create($url)
             ->setEncoding(new Encoding('UTF-8'))
@@ -48,7 +48,7 @@ class TwigExtension extends AbstractExtension
             ->setForegroundColor(new Color(0, 0, 0))
             ->setBackgroundColor(new Color(255, 255, 255));
 
-        $logo = Logo::create($this->logo)->setResizeToWidth(50);
+        $logo = $isShowLogo ? Logo::create($this->logo)->setResizeToWidth(50) : null;
 
         $qr = (new PngWriter())->write($qrCode, $logo);
 

@@ -3,9 +3,18 @@ twig:
 
     form_themes: ['bootstrap_5_layout.html.twig']
 
+    paths:
+        '%kernel.project_dir%/assets': assets
+
     globals:
         locales: '%supported_locales%'
         app_name: '%app_name%'
+
+        # for email
+        app_email_from: '%env(APP_EMAIL_FROM)%'
+        app_site_url: '%env(APP_SITE_URL)%'
+        app_legal_name: '%env(APP_LEGAL_NAME)%'
+        app_legal_address: '%env(APP_LEGAL_ADDRESS)%'
 
 when@test:
     twig:

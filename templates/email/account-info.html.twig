@@ -1,0 +1,42 @@
+{% extends 'email/_layout.html.twig' %}
+
+{% block title %}Подтвердите Ваш Email{% endblock %}
+
+ {% block public_header %}
+    <p></p>
+ {% endblock %}
+
+{% block public_body %}
+    <h1 class="text-center">{{ 'email_header'|trans }}</h1>
+
+    <p class="text-center">{{ 'email_public_body'|trans|nl2br }}</p>
+
+    <h5 class="text-center" style="font-weight: bold">{{ address.getAddress(true)|default }}</h5>
+
+    <p class="text-center">
+        <a class="button primary" target="_blank" href="{{ url('pay', {'address': address.getAddress(true)}) }}">
+            {{ 'email_payment_link'|trans }}
+        </a>
+    </p>
+{% endblock %}
+
+{% block private_header %}
+    <p>{{ 'email_confidential_warning'|trans }}</p>
+{% endblock %}
+
+{% block private_body %}
+    <p style="text-align: end" class="confidential">{{ 'email_confidential'|trans }}</p>
+
+    <p class="text-center">
+        {{ 'email_private_warning'|trans }} <br/>
+        <img src="{{ address.getPrivateKey()|qr(false) }}" alt="QR code of the private key" style="margin: auto"/>
+    </p>
+
+    <p>{{ 'email_private_key'|trans }}: <b><code>{{ address.getPrivateKey()|default }}</code></b></p>
+
+    <p>{{ 'email_instruction'|trans }}</p>
+{% endblock %}
+
+{#{% block detail %}#}
+{#    <p>{{ 'email_mistake_warning'|trans }}</p>#}
+{#{% endblock %}#}
