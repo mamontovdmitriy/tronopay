@@ -29,7 +29,7 @@ class SiteController extends AbstractController
                 $this->addFlash('error', $exception->getMessage());
             }
 
-//            return $this->redirectToRoute('main');
+            return $this->redirectToRoute('main');
         }
 
         return $this->render('default/index.html.twig', [
