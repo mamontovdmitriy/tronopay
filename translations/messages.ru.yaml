@@ -20,6 +20,11 @@ email_help: Мы никому не передаём ваш email.
 
 mgs_check_email: Проверьте указанный email!
 
+# clipboard
+clipboard_copy: Копировать
+clipboard_copied: Скопировано
+clipboard_error: Ошибка
+
 # payment
 available_balance: Доступный баланс
 

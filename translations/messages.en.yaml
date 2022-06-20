@@ -17,6 +17,11 @@ email_help: We'll never share your email with anyone else.
 
 mgs_check_email: Check your email, please.
 
+# clipboard
+clipboard_copy: Copy
+clipboard_copied: Copied
+clipboard_error: Error
+
 # payment
 available_balance: Available balance
 

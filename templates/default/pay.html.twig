@@ -15,7 +15,10 @@
              src="{{ address|qr }}"
              alt="QR-code of address"/>
 
-        <h6>{{ address }}</h6>
+        <h6>
+            {{ address }}
+            <i class="fas fa-clipboard text-primary" id="copy_button" title="{{ 'clipboard_copy'|trans }}"></i>
+        </h6>
 
         <div id="block_balance" class="text-center">
             <div class="m-5">
@@ -32,6 +35,22 @@
         const ADDRESS_USDC = 'TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8';
         const ADDRESS_USDD = 'TPYmHEhy5n8TCEfYGqW2rPxsghSfzghPDn';
         const ADDRESS_TUSD = 'TUpMhErZL2fhh4sVNULAbNKLokS4GjC1F4';
+
+        // Copy to clipboard
+        const btnCopy = document.getElementById('copy_button');
+        btnCopy.addEventListener('click', function (event) {
+            navigator.clipboard.writeText('{{ address }}')
+                .then(function () {
+                    btnCopy.classList.remove('fa-clipboard', 'text-primary');
+                    btnCopy.classList.add('fa-check', 'text-success');
+                    btnCopy.title = '{{ 'clipboard_copied'|trans }}';
+                })
+                .catch(function () {
+                    btnCopy.classList.remove('fa-clipboard', 'text-primary');
+                    btnCopy.classList.add('fa-ban', 'text-danger');
+                    btnCopy.title = '{{ 'clipboard_error'|trans }}';
+                });
+        });
 
         updateBalance();
 

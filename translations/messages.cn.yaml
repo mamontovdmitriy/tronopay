@@ -20,6 +20,11 @@ email_help: 我们绝不会与其他任何人分享您的电子邮件
 
 mgs_check_email: 请查看你的邮箱。
 
+# clipboard
+clipboard_copy: 复制
+clipboard_copied: 已复制
+clipboard_error: 错误
+
 # payment
 available_balance: 可用余额
 
