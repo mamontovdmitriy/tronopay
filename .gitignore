@@ -1,4 +1,9 @@
 /.idea
+/tronopay.conf
+
+###> deployer ###
+/deployer.phar
+###< deployer ###
 
 ###> symfony/framework-bundle ###
 /.env.local
