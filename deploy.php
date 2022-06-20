@@ -58,7 +58,9 @@ task('deploy:executable', function () {
 })->desc('Set executable ');
 
 task('deploy:php_fpm:restart', function () {
+    host('tronopay.com')->become('root');
     run('service php8.1-fpm restart');
+    host('tronopay.com')->become('www-data');
 })->desc('Restart PHP-FPM');
 
 
@@ -78,7 +80,7 @@ task('deploy', [
     'deploy:cache:warmup',
     'deploy:symlink',
     'deploy:unlock',
-//    'deploy:php_fpm:restart',
+    'deploy:php_fpm:restart',
     'cleanup',
 ])->desc('Deploy project');
 
