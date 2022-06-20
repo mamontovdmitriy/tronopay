@@ -16,10 +16,13 @@ set('repository', 'https://github.com/mamontovdmitriy/tronopay.git');
 set('allow_anonymous_stats', false);
 set('git_tty', false); // [Optional] Allocate tty for git clone. Default value is false. - for Windows
 set('writable_mode', 'chown');
-set('composer_options', '--ignore-platform-reqs');
+set('composer_options', 'install --verbose --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader --no-suggest --ignore-platform-reqs');
 
 set('shared_files', [
     '.env.local',
+]);
+set('shared_dirs', [
+    'var/log',
 ]);
 set('writable_dirs', [
     'var',
@@ -75,7 +78,7 @@ task('deploy', [
     'deploy:cache:warmup',
     'deploy:symlink',
     'deploy:unlock',
-    'deploy:php_fpm:restart',
+//    'deploy:php_fpm:restart',
     'cleanup',
 ])->desc('Deploy project');
 
@@ -86,7 +89,7 @@ after('deploy:failed', 'deploy:unlock');
 // Hosts
 host('tronopay.com')
     ->user('root')
-//    ->become('www-data')
+    ->become('www-data')
     ->port(22)
     ->identityFile('~/.ssh/id_rsa')
     ->forwardAgent(true)
