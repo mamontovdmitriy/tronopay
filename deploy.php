@@ -11,7 +11,7 @@ set('env', [
 ]);
 
 // Project repository
-set('repository', 'git@github.com:mamontovdmitriy/tronopay.git');
+set('repository', 'https://github.com/mamontovdmitriy/tronopay.git');
 
 set('allow_anonymous_stats', false);
 set('git_tty', false); // [Optional] Allocate tty for git clone. Default value is false. - for Windows
