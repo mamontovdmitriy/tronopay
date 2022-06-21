@@ -12,6 +12,12 @@ use Symfony\Component\Security\Core\Exception\InvalidArgumentException;
 #[Route(path: '/api')]
 class ApiController extends AbstractController
 {
+    #[Route(path: '/', name: 'api_docs')]
+    public function docs(): Response
+    {
+        return $this->render('api/docs.html.twig');
+    }
+
     #[Route(path: '/address', name: 'api_create_address', methods: ["POST", "GET"])]
     public function createAddress(WalletService $walletService): Response
     {
