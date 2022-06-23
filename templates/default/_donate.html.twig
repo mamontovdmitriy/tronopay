@@ -1,0 +1,14 @@
+<div class="pt-4 mt-4 text-muted text-center">
+    {% if app_github != '' %}
+        <a class="text-decoration-none text-secondary"
+           href="{{ app_github }}"
+           target="_blank"><i class="fab fa-github"></i> Tronopay on Github</a>
+        <br/>
+    {% endif %}
+
+    {% if app_donate != '' %}
+        <a class="text-decoration-none text-secondary"
+           href="https://tronopay.com/en/pay/{{ app_donate }}"
+           target="_blank"><i class="fas fa-donate"></i> Donate TRX/USDT:<br/>{{ app_donate }}</a>
+    {% endif %}
+</div>
