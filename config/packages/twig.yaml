@@ -9,6 +9,8 @@ twig:
     globals:
         locales: '%supported_locales%'
         app_name: '%app_name%'
+        app_donate: '%env(APP_DONATE)%'
+        app_github: '%env(APP_GITHUB)%'
 
         # for email
         app_email_from: '%env(APP_EMAIL_FROM)%'
