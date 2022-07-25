@@ -1,0 +1,19 @@
+# bot
+bot_confidential: Конфиденциально
+bot_create_address_message: Ваш новый адрес создан успешно
+bot_payment_link: Ссылка для платежа
+bot_address: Адрес
+bot_private_key: Секретный ключ
+bot_private_warning: Не разглашайте секретный ключ третьим лицам.
+bot_click_to_copy: Кликните чтобы скопировать
+bot_click_to_show: Кликните чтобы показать
+
+bot_start_header: Добро пожаловать в Tronopay
+bot_start_description: |
+  Это простейший способ приёма платежей для вашего бизнеса.
+  Он основан на распределенном блокчейне Tron.
+  Без регистрации. Без верификации. Без KYC и AML.
+bot_start_available_commands: Доступные команды
+bot_command_start: показать это сообщение
+bot_command_new: создать новый адрес
+bot_command_get_balance: получить баланс адреса

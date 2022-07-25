@@ -1,0 +1,15 @@
+✅️ {{ 'bot_create_address_message'|trans({}, 'bot', locale) }}.
+
+<b>🌐️ {{ 'bot_address'|trans({}, 'bot', locale) }}:</b> <code>{{ address.getAddress(true)|default }}</code>
+{#({{ 'bot_click_to_copy'|trans({}, 'bot', locale) }})#}
+
+{% set _url = app_site_url ~ path('pay', {'address': address.getAddress(true), '_locale': locale}) %}
+<b>🔗️ ️{{ 'bot_payment_link'|trans({}, 'bot', locale) }}:</b>
+<code><a href="{{ _url }}">{{ _url }}</a></code>
+{#({{ 'bot_click_to_copy'|trans({}, 'bot', locale) }})#}
+
+
+<b>‼️{{ 'bot_confidential'|trans({}, 'bot', locale) }} ‼</b> {{ 'bot_private_warning'|trans({}, 'bot', locale)}}
+<b>🔑️ {{ 'bot_private_key'|trans({}, 'bot', locale) }}:</b>
+<tg-spoiler>{{ address.getPrivateKey()|default }}</tg-spoiler>
+({{ 'bot_click_to_show'|trans({}, 'bot', locale) }})

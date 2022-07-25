@@ -17,7 +17,6 @@ services:
             dockerfile: development/php-fpm/Dockerfile
         environment:
             APP_ENV: dev
-            APP_DEBUG: 1
         volumes:
             - ./:/var/www
 
@@ -28,7 +27,6 @@ services:
             dockerfile: development/php-cli/Dockerfile
         environment:
             APP_ENV: dev
-            APP_DEBUG: 1
         volumes:
             - ./:/var/www
 

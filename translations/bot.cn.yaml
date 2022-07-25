@@ -1,0 +1,19 @@
+# bot
+bot_confidential: 机密的
+bot_create_address_message: 您的新地址已成功创建
+bot_payment_link: 支付链接
+bot_address: 地址
+bot_private_key: 密钥
+bot_private_warning: 不要与其他任何人共享密钥
+bot_click_to_copy: 点击复制
+bot_click_to_show: 点击显示
+
+bot_start_header: 欢迎来到 Tronopay
+bot_start_description: |
+  这是为您的企业接收付款的最简单方式。
+  它基于去中心化的 Tron 区块链。
+  没有日志。 没有注册。 没有验证。 没有KYC。 没有反洗钱。
+bot_start_available_commands: 可用命令
+bot_command_start: 显示此消息
+bot_command_new: 创建一个新地址
+bot_command_get_balance: 获取地址余额

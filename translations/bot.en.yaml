@@ -1,0 +1,19 @@
+# bot
+bot_confidential: Confidential
+bot_create_address_message: Your new address has been created successfully
+bot_payment_link: Link for payment
+bot_address: Address
+bot_private_key: Secret key
+bot_private_warning: Do not share the secret key with anyone else.
+bot_click_to_copy: Click to copy
+bot_click_to_show: Click to show
+
+bot_start_header: Welcome to Tronopay
+bot_start_description: |
+  This is the easiest way to receive payments for your business.
+  It's based on the decentralized Tron blockchain.
+  No logs. No registration. No verification. No KYC. No AML.
+bot_start_available_commands: Available commands
+bot_command_start: show this message
+bot_command_new: create a new address
+bot_command_get_balance: get address balance

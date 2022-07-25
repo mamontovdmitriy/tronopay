@@ -21,9 +21,14 @@ services:
 
         bind:
             string $pathProject: '%kernel.project_dir%'
+            string $pathCache: '%kernel.cache_dir%'
             string $urlTronNode: '%app_tron_node%'
             string $emailFrom: '%app_email_from%'
             string $appName: '%app_name%'
+            string $appEnv: '%env(APP_ENV)%'
+            string $appPHP: '%env(APP_PHP)%'
+            string $appTgToken: '%env(APP_TG_TOKEN)%'
+            bool $appDebug: '%env(bool:APP_DEBUG)%'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
@@ -41,3 +46,13 @@ services:
     App\Helper\TwigExtension:
         arguments:
             $logo: '%app_logo_tron%'
+
+    Symfony\Component\DependencyInjection\ContainerInterface: '@service_container'
+
+    App\Handler\HandlerFactory:
+        arguments:
+            - "@service_container"
+
+    App\Handler\:
+        public: true
+        resource: '../src/Handler/'
