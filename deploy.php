@@ -63,12 +63,28 @@ task('deploy:php_fpm:restart', function () {
     host('tronopay.com')->become('www-data');
 })->desc('Restart PHP-FPM');
 
+task('deploy:queue:stop', function () {
+    if (has('previous_release')) {
+        run('rm -f {{previous_release}}/var/cache/prod/queue*.pid');
+    }
+})->desc('Stop cron jobs');
+
+task('deploy:cron:stop', function () {
+    run('echo "" | crontab');
+})->desc('Stop cron jobs');
+
+task('deploy:cron:install', function () {
+    run('crontab {{release_path}}/crontab.conf');
+})->desc('Install cron jobs');
+
 
 task('deploy', [
     'deploy:info',
     'deploy:prepare',
     'deploy:lock',
+    'deploy:cron:stop',
     'deploy:release',
+    'deploy:queue:stop',
     'deploy:update_code',
     'deploy:shared',
     'deploy:vendors',
@@ -81,6 +97,7 @@ task('deploy', [
     'deploy:symlink',
     'deploy:unlock',
     'deploy:php_fpm:restart',
+    'deploy:cron:install',
     'cleanup',
 ])->desc('Deploy project');
 
