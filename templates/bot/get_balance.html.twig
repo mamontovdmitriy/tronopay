@@ -1,4 +1,5 @@
-<b>💎️ Current balance of {{ address|default }}</b>
+<b>💎️ Balance of {{ address|default }}</b>
 
- TRX: 0
-USDT: 0
+{% for name, amount in balance %}
+ 🔹️ <b>{{ name }}:</b> {{ amount }}
+{% endfor %}

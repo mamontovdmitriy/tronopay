@@ -11,6 +11,7 @@ parameters:
     app_name: '%env(APP_NAME)%'
     app_logo_tron: '%kernel.project_dir%/assets/tron.png'
     app_tron_node: '%env(APP_TRON_NODE)%'
+    app_tron_balance: '%env(APP_TRON_BALANCE)%'
     app_email_from: '%env(APP_EMAIL_FROM)%'
 
 services:
@@ -23,6 +24,7 @@ services:
             string $pathProject: '%kernel.project_dir%'
             string $pathCache: '%kernel.cache_dir%'
             string $urlTronNode: '%app_tron_node%'
+            string $urlTronBalance: '%app_tron_balance%'
             string $emailFrom: '%app_email_from%'
             string $appName: '%app_name%'
             string $appEnv: '%env(APP_ENV)%'

@@ -56,7 +56,7 @@ abstract class AbstractQueueCommand extends Command
             if (!$process->isRunning()) {
                 try {
                     // Check our PID from the file, else it terminates
-                    $newPid = file_get_contents($filenamePid);
+                    $newPid = @file_get_contents($filenamePid);
                     if ($newPid != $phpProcessPid) {
                         return $this->error('New PID (' . $newPid . ') found. Process terminated. Pid=' . $phpProcessPid);
                     }
