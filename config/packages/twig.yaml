@@ -11,6 +11,8 @@ twig:
         app_name: '%app_name%'
         app_donate: '%env(APP_DONATE)%'
         app_github: '%env(APP_GITHUB)%'
+        app_telegram_bot: '%env(APP_TELEGRAM_BOT)%'
+        app_telegram_news: '%env(APP_TELEGRAM_NEWS)%'
 
         # for email
         app_email_from: '%env(APP_EMAIL_FROM)%'

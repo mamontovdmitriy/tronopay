@@ -1,9 +1,27 @@
 <div class="pt-4 mt-4 text-muted text-center">
+    {% if app_telegram_bot != '' and app_telegram_news != '' %}
+        <span>
+            <i class="fab fa-telegram-plane"></i>
+            Telegram
+            <a class="text-decoration-none text-primary"
+               href="{{ app_telegram_bot }}"
+               target="_blank">bot</a>
+            or
+            <a class="text-decoration-none text-primary"
+               href="{{ app_telegram_news }}"
+               target="_blank">news</a>
+            <br/>
+        </span>
+    {% endif %}
+
     {% if app_github != '' %}
-        <a class="text-decoration-none text-secondary"
-           href="{{ app_github }}"
-           target="_blank"><i class="fab fa-github"></i> Tronopay on Github</a>
-        <br/>
+        <span>
+            <i class="fab fa-github"></i> Tronopay on
+            <a class="text-decoration-none text-primary"
+               href="{{ app_github }}"
+               target="_blank">Github</a>
+            <br/>
+        </span>
     {% endif %}
 
     {% if app_donate != '' %}
